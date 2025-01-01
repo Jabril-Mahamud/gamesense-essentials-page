@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GameSense Essentials Page
 
-## Getting Started
+![GameSense Essentials](https://img.shields.io/badge/version-v1.15.0-orange) ![GitHub](https://img.shields.io/github/license/mtricht/gamesense-essentials) ![Build Status](https://img.shields.io/github/workflow/status/mtricht/gamesense-essentials/ci)
 
-First, run the development server:
+This repository contains the **landing page** for the **GameSense Essentials** project, which provides powerful OLED integrations for **SteelSeries GG**. It showcases customizable displays and controls for a wide range of applications. The page is designed to help users explore the features and installation process for the project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Note**: This repository is **not the main GameSense Essentials project** but is specifically for the website that documents and provides downloads for the tool. For the actual GameSense Essentials software, visit the [GameSense Essentials GitHub Repository](https://github.com/mtricht/gamesense-essentials).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features of the Page
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Clock Display**: Real-time clock display with customizable formats.
+- **Music Integration**: Seamless control of popular music services like Spotify, iTunes, and more.
+- **Volume Control**: Intuitive system volume control with real-time OLED feedback.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Supported Applications
 
-## Learn More
+The GameSense Essentials software supports the following applications for integration:
 
-To learn more about Next.js, take a look at the following resources:
+- [TIDAL](https://tidal.com): High-fidelity music streaming
+- [MusicBee](https://getmusicbee.com): Advanced music management and playback
+- [AIMP](https://www.aimp.ru): Lightweight audio player
+- [YouTube Music Desktop App (th-ch)](https://github.com/th-ch/youtube-music): An open-source YouTube Music desktop app with ad blocker and downloader
+- [YouTube Music Desktop App](https://github.com/ytmdesktop/ytmdesktop): Official YouTube Music desktop client
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For more information on **GameSense Essentials**, visit the main [GameSense Essentials GitHub Repository](https://github.com/mtricht/gamesense-essentials).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+To install the **GameSense Essentials** software, follow the instructions in the [official GameSense Essentials README](https://github.com/mtricht/gamesense-essentials). This repository only provides the landing page and documentation.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The content in this repository is licensed under the **MIT License**. See [LICENSE](https://github.com/mtricht/gamesense-essentials-page/blob/main/LICENSE) for more details.
+
+## Contact
+
+- [GitHub Repository](https://github.com/mtricht/gamesense-essentials-page)
+- LinkedIn: [your-linkedin-profile](https://www.linkedin.com/in/jabril-mahamud/)
+
+---
+
+Landing page created by **Jabril**. Feel free to support the original project by buying him a [coffee](https://ko-fi.com/X8X63RV89).  
