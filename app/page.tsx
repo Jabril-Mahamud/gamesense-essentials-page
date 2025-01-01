@@ -3,10 +3,9 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 
-
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   Clock,
@@ -117,47 +116,42 @@ const scaleVariants = {
 };
 
 export default function Home() {
-  const [selectedApp, setSelectedApp] = useState<string | null>(null);
-
   const handleAppSelect = (appName: string) => {
-    setSelectedApp(appName);
+    // Function kept for future use
+    console.log(appName);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       {/* Menu Bar */}
       <div className="absolute top-4 right-4 flex gap-4 items-center text-gray-300">
-        <Link
-          href="https://ko-fi.com/X8X63RV89"
-          target="_blank"
-          className="text-sm hover:text-orange-500"
-        >
+        <div className="absolute top-4 right-4 flex items-center gap-4 text-gray-300">
           <HoverCard>
-          <HoverCardTrigger className="inline-block">
-            <Link
-              href="https://ko-fi.com/X8X63RV89"
-              target="_blank"
-              className="text-sm hover:text-orange-500"
-            >
-              Buy mtricht a Coffee
-            </Link>
-          </HoverCardTrigger>
-          <HoverCardContent className="bg-gray-900 text-white p-4">
-            <p className="text-sm">
-                Mtricht made this incredible project. I use it everyday on my Steelseries GameDac so give him some love and support.❤️
-            </p>
-          </HoverCardContent>
-        </HoverCard>
-          
-        </Link>
-        <span>|</span>
-        <Link
-          href="https://github.com/mtricht/gamesense-essentials"
-          target="_blank"
-          className="text-sm hover:text-orange-500"
-        >
-          GitHub
-        </Link>
+            <HoverCardTrigger asChild>
+              <Link
+                href="https://ko-fi.com/X8X63RV89"
+                target="_blank"
+                className="text-sm hover:text-orange-500 w-36 inline-flex"
+              >
+                Buy mtricht a Coffee
+              </Link>
+            </HoverCardTrigger>
+            <HoverCardContent className="bg-gray-900 text-white p-4">
+              <p className="text-sm">
+                Mtricht made this incredible project. I use it everyday on my
+                Steelseries GameDac so give him some love and support.❤️
+              </p>
+            </HoverCardContent>
+          </HoverCard>
+          <span>|</span>
+          <Link
+            href="https://github.com/mtricht/gamesense-essentials"
+            target="_blank"
+            className="text-sm hover:text-orange-500"
+          >
+            GitHub
+          </Link>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 py-16">
@@ -218,10 +212,9 @@ export default function Home() {
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <motion.div
                 key={feature.title}
-                variants={itemVariants}
                 whileHover="hover"
                 variants={scaleVariants}
               >
@@ -317,14 +310,14 @@ export default function Home() {
             <CardContent className="space-y-4">
               <CardDescription className="text-gray-300">
                 To run after boot, create a shortcut to gamesense-essentials
-                inside the "Startup" folder. Follow this{" "}
+                inside the &quot;Startup&quot; folder. Follow this{" "}
                 <Link
                   href="https://www.howtogeek.com/208224/how-to-add-a-program-to-startup-in-windows/"
                   className="text-green-600"
                 >
                   tutorial
                 </Link>{" "}
-                if you're having trouble.
+                if you&apos;re having trouble.
               </CardDescription>
             </CardContent>
           </Card>
@@ -334,7 +327,9 @@ export default function Home() {
         <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
           <Card className="bg-gray-800/50 border-gray-700">
             <CardHeader>
-              <CardTitle className="text-white underline">Demo Video:</CardTitle>
+              <CardTitle className="text-white underline">
+                Demo Video:
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-gray-300 flex justify-center items-center">
@@ -347,6 +342,7 @@ export default function Home() {
             </CardContent>
           </Card>
         </motion.div>
+
         {/* Footer */}
         <footer className="bg-gray-900 text-gray-400 py-8 mt-12 text-center mx-auto">
           <div className="flex justify-center gap-6 items-center mb-4">
