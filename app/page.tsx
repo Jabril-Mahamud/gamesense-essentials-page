@@ -28,7 +28,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
@@ -41,18 +40,18 @@ const features = [
   {
     title: "Clock Display",
     description:
-      "Real-time clock display on your OLED screen with customizable formats",
+      "Real-time clock display on your OLED screen with customizable formats.",
     icon: Clock,
   },
   {
     title: "Music Integration",
     description:
-      "Seamless control for popular music services including Spotify, iTunes, and more",
+      "Seamless control for popular music services including Spotify, iTunes, and more ...",
     icon: Music,
   },
   {
     title: "Volume Control",
-    description: "Intuitive system volume control with real-time OLED feedback",
+    description: "Intuitive system volume control with real-time OLED feedback.",
     icon: Volume2,
   },
 ];
@@ -61,28 +60,28 @@ const supportedApps = [
   {
     name: "TIDAL",
     url: "https://tidal.com",
-    description: "High-fidelity music streaming",
+    description: "High-fidelity music streaming.",
   },
   {
     name: "MusicBee",
     url: "https://getmusicbee.com",
-    description: "Advanced music management and playback",
+    description: "Advanced music management and playback.",
   },
   {
     name: "AIMP",
     url: "https://www.aimp.ru",
-    description: "Lightweight audio player",
+    description: "Lightweight audio player.",
   },
   {
     name: "YouTube Music Desktop App (th-ch)",
     url: "https://github.com/th-ch/youtube-music",
     description:
-      "An open source, cross-platform, unofficial YouTube Music Desktop App with built-in ad blocker and downloader",
+      "An open source, cross-platform, unofficial YouTube Music Desktop App with built-in ad blocker and downloader.",
   },
   {
     name: "YouTube Music Desktop App",
     url: "https://github.com/ytmdesktop/ytmdesktop",
-    description: "Official YouTube Music desktop client",
+    description: "Official YouTube Music desktop client.",
   },
 ];
 
@@ -164,10 +163,7 @@ export default function Home() {
           {/* Hero Section */}
           <motion.div variants={itemVariants} className="text-center space-y-6">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <Badge variant="secondary" className="text-sm">
-                <Download className="mr-1 h-3 w-3" />
-                v1.15.0
-              </Badge>
+              
             </div>
             <motion.h1
               className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600"
@@ -238,7 +234,7 @@ export default function Home() {
             <Card className="bg-gray-800/50 border-gray-700">
               <CardHeader>
                 <CardTitle className="text-white">
-                  Installation & Compatibility
+                  Installation & Compatibility:
                 </CardTitle>
                 <CardDescription className="text-gray-300">
                   Get started with GameSense Essentials in minutes
