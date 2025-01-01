@@ -1,6 +1,12 @@
 "use client";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
-import { useState } from "react";
+
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Clock,
@@ -11,6 +17,8 @@ import {
   Terminal,
   ExternalLink,
   CheckCircle,
+  Mail,
+  Linkedin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,6 +36,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const features = [
   {
@@ -68,7 +77,8 @@ const supportedApps = [
   {
     name: "YouTube Music Desktop App (th-ch)",
     url: "https://github.com/th-ch/youtube-music",
-    description: "An open source, cross-platform, unofficial YouTube Music Desktop App with built-in ad blocker and downloader",
+    description:
+      "An open source, cross-platform, unofficial YouTube Music Desktop App with built-in ad blocker and downloader",
   },
   {
     name: "YouTube Music Desktop App",
@@ -115,6 +125,41 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      {/* Menu Bar */}
+      <div className="absolute top-4 right-4 flex gap-4 items-center text-gray-300">
+        <Link
+          href="https://ko-fi.com/X8X63RV89"
+          target="_blank"
+          className="text-sm hover:text-orange-500"
+        >
+          <HoverCard>
+          <HoverCardTrigger className="inline-block">
+            <Link
+              href="https://ko-fi.com/X8X63RV89"
+              target="_blank"
+              className="text-sm hover:text-orange-500"
+            >
+              Buy mtricht a Coffee
+            </Link>
+          </HoverCardTrigger>
+          <HoverCardContent className="bg-gray-900 text-white p-4">
+            <p className="text-sm">
+                Mtricht made this incredible project. I use it everyday on my Steelseries GameDac so give him some love and support.❤️
+            </p>
+          </HoverCardContent>
+        </HoverCard>
+          
+        </Link>
+        <span>|</span>
+        <Link
+          href="https://github.com/mtricht/gamesense-essentials"
+          target="_blank"
+          className="text-sm hover:text-orange-500"
+        >
+          GitHub
+        </Link>
+      </div>
+
       <div className="container mx-auto px-4 py-16">
         <motion.div
           initial="hidden"
@@ -154,7 +199,11 @@ export default function Home() {
                 </Button>
               </motion.div>
               <motion.div whileHover="hover" variants={scaleVariants}>
-                <Button asChild className="bg-green-500 hover:bg-purple-600" size = "lg">
+                <Button
+                  asChild
+                  className="bg-green-500 hover:bg-purple-600"
+                  size="lg"
+                >
                   <a href="https://github.com/mtricht/gamesense-essentials">
                     <Github className="mr-2 h-4 w-4" />
                     View on GitHub
@@ -246,22 +295,6 @@ export default function Home() {
                                 Learn More <ExternalLink className="h-3 w-3" />
                               </a>
                             </Button>
-
-                            {/* Conditionally render the alert inside the dropdown */}
-                            {app.name === "YouTube Music Desktop App (th-ch)" && selectedApp === app.name && (
-                              <Alert className="bg-gray-900 border-yellow-500 mt-4">
-                                <Terminal className="h-4 w-4 stroke-white" />
-                                <AlertTitle className="text-white">API Configuration</AlertTitle>
-                                <AlertDescription className="text-gray-300">
-                                  For YouTube Music Desktop App integration, ensure the API
-                                  server plugin is enabled and running on port{" "}
-                                  <code className="bg-gray-800 px-1.5 py-0.5 rounded">
-                                    26538
-                                  </code>{" "}
-                                  without authentication.
-                                </AlertDescription>
-                              </Alert>
-                            )}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
@@ -272,6 +305,82 @@ export default function Home() {
             </Card>
           </motion.div>
         </motion.div>
+
+        {/* body */}
+        <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
+          <Card className="bg-gray-800/50 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-white">
+                Run on windows startup
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-gray-300">
+                To run after boot, create a shortcut to gamesense-essentials
+                inside the "Startup" folder. Follow this{" "}
+                <Link
+                  href="https://www.howtogeek.com/208224/how-to-add-a-program-to-startup-in-windows/"
+                  className="text-green-600"
+                >
+                  tutorial
+                </Link>{" "}
+                if you're having trouble.
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* body */}
+        <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
+          <Card className="bg-gray-800/50 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-white underline">Demo Video:</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-gray-300 flex justify-center items-center">
+                <video controls width="500">
+                  <source src="/DemoVideo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag. Check the repo
+                  instead.
+                </video>
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </motion.div>
+        {/* Footer */}
+        <footer className="bg-gray-900 text-gray-400 py-8 mt-12 text-center mx-auto">
+          <div className="flex justify-center gap-6 items-center mb-4">
+            <span className="text-white text-sm font-light max-w-3xl mx-auto p-4">
+              Created by <span className="font-semibold">Jabril</span>. I only
+              wanted to improve the original page. All credit to the original
+              developer. I added his details at the top. 😀
+            </span>
+          </div>
+          <div className="flex justify-center gap-6 items-center mt-4">
+            <a
+              href="mailto:your-email@example.com"
+              className="text-white hover:text-orange-500"
+            >
+              <Mail className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/your-linkedin-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-orange-500"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
+          </div>
+          <p className="mt-4 text-sm font-light text-gray-300">
+            <a
+              href="https://github.com/mtricht/gamesense-essentials"
+              className="text-orange-500 hover:underline"
+            >
+              Check out the GitHub repository
+            </a>
+          </p>
+        </footer>
       </div>
     </div>
   );
