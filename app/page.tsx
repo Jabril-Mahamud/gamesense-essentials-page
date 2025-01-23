@@ -4,7 +4,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -35,18 +34,17 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/providers/theme-toggle";
 
 const features = [
   {
     title: "Clock Display",
-    description:
-      "Real-time clock display on your OLED screen with customizable formats.",
+    description: "Real-time clock display on your OLED screen with customizable formats.",
     icon: Clock,
   },
   {
     title: "Music Integration",
-    description:
-      "Seamless control for popular music services including Spotify, iTunes, and more ...",
+    description: "Seamless control for popular music services including Spotify, iTunes, and more ...",
     icon: Music,
   },
   {
@@ -75,8 +73,7 @@ const supportedApps = [
   {
     name: "YouTube Music Desktop App (th-ch)",
     url: "https://github.com/th-ch/youtube-music",
-    description:
-      "An open source, cross-platform, unofficial YouTube Music Desktop App with built-in ad blocker and downloader.",
+    description: "An open source, cross-platform, unofficial YouTube Music Desktop App with built-in ad blocker and downloader.",
   },
   {
     name: "YouTube Music Desktop App",
@@ -116,15 +113,15 @@ const scaleVariants = {
 
 export default function Home() {
   const handleAppSelect = (appName: string) => {
-    // Function kept for future use
     console.log(appName);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-background text-foreground dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 dark:text-white">
       {/* Menu Bar */}
-      <div className="absolute top-4 right-4 flex gap-4 items-center text-gray-300">
-        <div className="absolute top-4 right-4 flex items-center gap-4 text-gray-300">
+      <div className="absolute top-4 right-4 flex gap-4 items-center text-muted-foreground">
+        <div className="absolute top-4 right-4 flex items-center gap-4">
+          <ThemeToggle />
           <HoverCard>
             <HoverCardTrigger asChild>
               <Link
@@ -135,7 +132,7 @@ export default function Home() {
                 Buy mtricht a Coffee
               </Link>
             </HoverCardTrigger>
-            <HoverCardContent className="bg-gray-900 text-white p-4">
+            <HoverCardContent className="bg-background border-border text-foreground dark:bg-gray-900 dark:text-white p-4">
               <p className="text-sm">
                 Mtricht made this incredible project. I use it everyday on my
                 Steelseries GameDac so give him some love and support.❤️
@@ -162,16 +159,14 @@ export default function Home() {
         >
           {/* Hero Section */}
           <motion.div variants={itemVariants} className="text-center space-y-6">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              
-            </div>
+            <div className="flex items-center justify-center gap-4 mb-4"></div>
             <motion.h1
               className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600"
               whileHover={{ scale: 1.02 }}
             >
               GameSense Essentials
             </motion.h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground dark:text-gray-300 max-w-2xl mx-auto">
               Essential OLED integrations for SteelSeries GG. Transform your
               gaming setup with powerful customizable displays and controls.
             </p>
@@ -214,13 +209,13 @@ export default function Home() {
                 whileHover="hover"
                 variants={scaleVariants}
               >
-                <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-colors h-full">
+                <Card className="bg-background/50 border-border dark:bg-gray-800/50 dark:border-gray-700 hover:bg-muted/70 transition-colors h-full">
                   <CardHeader>
                     <feature.icon className="h-12 w-12 text-orange-500 mb-4" />
-                    <CardTitle className="text-white">
+                    <CardTitle className="text-foreground dark:text-white">
                       {feature.title}
                     </CardTitle>
-                    <CardDescription className="text-gray-300">
+                    <CardDescription className="text-muted-foreground dark:text-gray-300">
                       {feature.description}
                     </CardDescription>
                   </CardHeader>
@@ -231,35 +226,35 @@ export default function Home() {
 
           {/* Installation & Compatibility Section */}
           <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
-            <Card className="bg-gray-800/50 border-gray-700">
+            <Card className="bg-background/50 border-border dark:bg-gray-800/50 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="text-white">
+                <CardTitle className="text-foreground dark:text-white">
                   Installation & Compatibility:
                 </CardTitle>
-                <CardDescription className="text-gray-300">
+                <CardDescription className="text-muted-foreground dark:text-gray-300">
                   Get started with GameSense Essentials in minutes
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <Alert className="bg-gray-900 border-orange-500">
-                  <Terminal className="h-4 w-4 stroke-white" />
-                  <AlertTitle className="text-white">
+                <Alert className="bg-background/80 border-orange-500 dark:bg-gray-900">
+                  <Terminal className="h-4 w-4 stroke-current" />
+                  <AlertTitle className="text-foreground dark:text-white">
                     System Requirements
                   </AlertTitle>
-                  <AlertDescription className="text-gray-300">
+                  <AlertDescription className="text-muted-foreground dark:text-gray-300">
                     Requires Windows and SteelSeries GG with GameSense™ enabled
                   </AlertDescription>
                 </Alert>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-foreground dark:text-white">
                     Supported Applications
                   </h3>
                   <Accordion type="single" collapsible className="w-full">
                     {supportedApps.map((app, index) => (
                       <AccordionItem key={app.name} value={`item-${index}`}>
                         <AccordionTrigger
-                          className="text-white hover:text-orange-500"
+                          className="text-foreground hover:text-orange-500 dark:text-white"
                           onClick={() => handleAppSelect(app.name)}
                         >
                           <div className="flex items-center gap-2">
@@ -267,7 +262,7 @@ export default function Home() {
                             {app.name}
                           </div>
                         </AccordionTrigger>
-                        <AccordionContent className="text-gray-300">
+                        <AccordionContent className="text-muted-foreground dark:text-gray-300">
                           <div className="space-y-2">
                             <p>{app.description}</p>
                             <Button
@@ -293,86 +288,86 @@ export default function Home() {
               </CardContent>
             </Card>
           </motion.div>
-        </motion.div>
 
-        {/* body */}
-        <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
-          <Card className="bg-gray-800/50 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-white">
-                Run on windows startup
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-gray-300">
-                To run after boot, create a shortcut to gamesense-essentials
-                inside the &quot;Startup&quot; folder. Follow this{" "}
-                <Link
-                  href="https://www.howtogeek.com/208224/how-to-add-a-program-to-startup-in-windows/"
-                  className="text-green-600"
-                >
-                  tutorial
-                </Link>{" "}
-                if you&apos;re having trouble.
-              </CardDescription>
-            </CardContent>
-          </Card>
-        </motion.div>
+          {/* Run on Windows Startup */}
+          <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
+            <Card className="bg-background/50 border-border dark:bg-gray-800/50 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-foreground dark:text-white">
+                  Run on windows startup
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription className="text-muted-foreground dark:text-gray-300">
+                  To run after boot, create a shortcut to gamesense-essentials
+                  inside the &quot;Startup&quot; folder. Follow this{" "}
+                  <Link
+                    href="https://www.howtogeek.com/208224/how-to-add-a-program-to-startup-in-windows/"
+                    className="text-green-600"
+                  >
+                    tutorial
+                  </Link>{" "}
+                  if you&apos;re having trouble.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-        {/* body */}
-        <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
-          <Card className="bg-gray-800/50 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-white underline">
-                Demo Video:
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-gray-300 flex justify-center items-center">
-                <video controls width="500">
-                  <source src="/DemoVideo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag. Check the repo
-                  instead.
-                </video>
-              </CardDescription>
-            </CardContent>
-          </Card>
-        </motion.div>
+          {/* Demo Video */}
+          <motion.div variants={itemVariants} className="max-w-3xl mx-auto pt-4">
+            <Card className="bg-background/50 border-border dark:bg-gray-800/50 dark:border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-foreground dark:text-white underline">
+                  Demo Video:
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription className="text-muted-foreground dark:text-gray-300 flex justify-center items-center">
+                  <video controls width="500">
+                    <source src="/DemoVideo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag. Check the repo
+                    instead.
+                  </video>
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-        {/* Footer */}
-        <footer className="bg-gray-900 text-gray-400 py-8 mt-12 text-center mx-auto">
-          <div className="flex justify-center gap-6 items-center mb-4">
-            <span className="text-white text-sm font-light max-w-3xl mx-auto p-4">
-              Created by <span className="font-semibold">Jabril</span>. I only
-              wanted to improve the original page. All credit to the original
-              developer. I added his details at the top. 😀
-            </span>
-          </div>
-          <div className="flex justify-center gap-6 items-center mt-4">
-            <a
-              href="mailto:your-email@example.com"
-              className="text-white hover:text-orange-500"
-            >
-              <Mail className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/your-linkedin-profile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-orange-500"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-          </div>
-          <p className="mt-4 text-sm font-light text-gray-300">
-            <a
-              href="https://github.com/mtricht/gamesense-essentials"
-              className="text-orange-500 hover:underline"
-            >
-              Check out the GitHub repository
-            </a>
-          </p>
-        </footer>
+          {/* Footer */}
+          <footer className="bg-muted dark:bg-gray-900 text-muted-foreground dark:text-gray-400 py-8 mt-12 text-center mx-auto">
+            <div className="flex justify-center gap-6 items-center mb-4">
+              <span className="text-foreground dark:text-white text-sm font-light max-w-3xl mx-auto p-4">
+                Created by <span className="font-semibold">Jabril</span>. I only
+                wanted to improve the original page. All credit to the original
+                developer. I added his details at the top. 😀
+              </span>
+            </div>
+            <div className="flex justify-center gap-6 items-center mt-4">
+              <a
+                href="mailto:your-email@example.com"
+                className="text-foreground dark:text-white hover:text-orange-500"
+              >
+                <Mail className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jabril-mahamud/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground dark:text-white hover:text-orange-500"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+            </div>
+            <p className="mt-4 text-sm font-light text-muted-foreground dark:text-gray-300">
+              <a
+                href="https://github.com/mtricht/gamesense-essentials"
+                className="text-orange-500 hover:underline"
+              >
+                Check out the GitHub repository
+              </a>
+            </p>
+          </footer>
+        </motion.div>
       </div>
     </div>
   );
