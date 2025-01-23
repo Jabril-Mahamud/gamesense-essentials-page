@@ -344,7 +344,9 @@ export default function Home() {
             </div>
             <div className="flex justify-center gap-6 items-center mt-4">
               <a
-                href="mailto:your-email@example.com"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-foreground dark:text-white hover:text-orange-500"
               >
                 <Mail className="h-6 w-6" />
