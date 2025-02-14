@@ -34,7 +34,7 @@ The content in this repository is licensed under the **MIT License**. See [LICEN
 
 ## Contact
 
-- [GitHub Repository](https://github.com/mtricht/gamesense-essentials-page)
+- [GitHub Repository](https://github.com/mtricht/gamesense-essentials)
 - LinkedIn: (https://www.linkedin.com/in/jabril-mahamud/)
 
 ---
